@@ -12,7 +12,8 @@
       "POSTGRES_HOST": "${postgres.control-plane-postgres.interfaces.writer.host}",
       "POSTGRES_PORT": "${postgres.control-plane-postgres.interfaces.writer.port}",
       "POSTGRES_USER": "${postgres.control-plane-postgres.interfaces.writer.username}",
-      "POSTGRES_PASSWORD": "${postgres.control-plane-postgres.interfaces.writer.password}"
+      "POSTGRES_PASSWORD": "${postgres.control-plane-postgres.interfaces.writer.password}",
+      "REDIS_HOST": "${redis.main-redis.interfaces.writer.password}"
     },
     "type": "application",
     "enable_host_anti_affinity": true,
