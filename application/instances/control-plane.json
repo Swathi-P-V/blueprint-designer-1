@@ -9,10 +9,10 @@
   "kind": "service",
   "spec": {
     "env": {
-      "POSTGRES_HOST": "${postgres.retool-postgress.interfaces.writer.host}",
-      "POSTGRES_PORT": "${postgres.retool-postgress.interfaces.writer.port}",
-      "POSTGRES_USER": "${postgres.retool-postgress.interfaces.writer.username}",
-      "POSTGRES_PASSWORD": "${postgres.retool-postgress.interfaces.writer.password}"
+      "POSTGRES_HOST": "${postgres.control-plane-postgress.interfaces.writer.host}",
+      "POSTGRES_PORT": "${postgres.control-plane-postgress.interfaces.writer.port}",
+      "POSTGRES_USER": "${postgres.control-plane-postgress.interfaces.writer.username}",
+      "POSTGRES_PASSWORD": "${postgres.control-plane-postgress.interfaces.writer.password}"
     },
     "type": "application",
     "enable_host_anti_affinity": true,

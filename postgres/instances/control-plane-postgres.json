@@ -7,7 +7,7 @@
     "depends_on": [
     ],
     "metadata": {
-      "name": "controla-plane-postgres",
+      "name": "control-plane-postgres",
       "tags": {
         "name": "control-plane-main"
       }
