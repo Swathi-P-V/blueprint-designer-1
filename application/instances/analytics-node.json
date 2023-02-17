@@ -4,7 +4,7 @@
     "disabled": true,
     "kind": "service",
     "metadata": {
-        "name": "analytics-ui"
+        "name": "analytics-node"
     },
     "spec": {
         "env": {

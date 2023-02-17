@@ -1,0 +1,9 @@
+{
+    "$schema": "https://facets-cloud.github.io/facets-schemas/schemas/service/service.schema.json",
+    "version": "0.1",
+    "disabled": true,
+    "kind": "service",
+    "metadata": {
+        "name": "analytics-ui"
+    }
+}
