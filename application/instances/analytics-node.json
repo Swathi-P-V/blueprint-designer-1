@@ -17,7 +17,7 @@
           "POSTGRES_USER": "${postgres.control-plane-postgres.interfaces.writer.username}",
           "POSTGRES_PASSWORD": "${postgres.control-plane-postgres.interfaces.writer.password}",
           "REDIS_HOST": "${redis.main-redis.interfaces.writer.password}",
-          "ANALYTICS_BE_HOST": "${application.analytics.interfaces.writer.host}"
+          "ANALYTICS_BE_HOST": "${service.analytics.interfaces.writer.host}"
         },
         "type": "application",
         "enable_host_anti_affinity": true,
