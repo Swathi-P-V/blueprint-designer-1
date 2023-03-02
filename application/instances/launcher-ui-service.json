@@ -3,7 +3,7 @@
     "disabled": true,
     "version": "0.1",
     "metadata": {
-      "name": "control-plane-ui"
+      "name": "launcher-ui"
     },
     "flavor": "aws",
     "kind": "service",
