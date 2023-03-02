@@ -24,6 +24,12 @@
                 "port": "${service.control-plane-ui-service.out.interfaces.main.port}",
                 "service_name": "${service.control-plane-ui-service.out.interfaces.main.name}"
             },
+            "service-three": {
+                "domain_prefix": "",
+                "path": "/",
+                "port": "${service.service-three.out.interfaces.main.port}",
+                "service_name": "${service.service-three.out.interfaces.main.name}"
+            },
             "ui-2": {
                 "domain_prefix": "",
                 "path": "/",
