@@ -24,6 +24,12 @@
                 "port": "${service.control-plane-ui-service.out.interfaces.main.port}",
                 "service_name": "${service.control-plane-ui-service.out.interfaces.main.name}"
             },
+            "ui-2": {
+                "domain_prefix": "",
+                "path": "/",
+                "port": "${service-launcher-ui-service.out.interfaces.main.port}",
+                "service_name": "${service.launcher-ui-service.out.interfaces.main.name}"
+            },
             "backend-0": {
                 "domain_prefix": "",
                 "path": "/api",
