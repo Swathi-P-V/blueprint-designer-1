@@ -9,6 +9,7 @@
     "kind": "service",
     "spec": {
       "env": {
+        "MONGO_HOST": "${mongo.main-mongo.interfaces.writer.host}"
       },
       "type": "application",
       "enable_host_anti_affinity": true,
