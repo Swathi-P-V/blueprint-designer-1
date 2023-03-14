@@ -1,0 +1,92 @@
+{
+  "kind": "alert_group",
+  "flavor": "default",
+  "version": "0.1",
+  "lifecycle": "ENVIRONMENT",
+  "disabled": false,
+  "provided": false,
+  "depends_on": [],
+  "metadata": {
+    "name": "facets-cp-rules-new",
+    "annotations": {
+      "rule": "facets-cp-rules-new"
+    }
+  },
+  "spec": {
+    "rules": {
+      "ControlPlaneRestartedNew": {
+        "expr": "rate(kube_pod_container_status_restarts_total{container=\"control-plane-new\"}[1m]) * 60 > 0",
+        "for": "0m",
+        "summary": "Control plane restarted in last 1 minutes for {{ $labels.instance }}",
+        "message": "Control plane restarted",
+        "severity": "critical",
+        "resource_name": "{{ $labels.pod }}",
+        "resource_type": "pod",
+        "labels": {
+          "team": "stack_owner",
+          "severity": "critical",
+          "resourceName": "{{ $labels.pod }}",
+          "resourceType": "pod"
+        },
+        "annotations": {
+          "k1": "v1"
+        }
+      },
+      "PrometheusDownNew": {
+        "expr": "avg without(pod, instance) (facets_prometheus_status == 0)",
+        "message": "[{{ $labels.stackName }} -> {{ $labels.clusterName }}] Prometheus is down for more than 5minutes",
+        "summary": "[{{ $labels.stackName }} -> {{ $labels.clusterName }}] Prometheus is down for more than 5minutes",
+        "for": "5m",
+        "labels": {
+          "team": "stack_owner",
+          "severity": "critical",
+          "resourceName": "{{ $labels.clusterName }}",
+          "resourceType": "prometheus"
+        },
+        "annotations": {
+          "k2": "v2"
+        },
+        "severity": "critical",
+        "resource_name": "{{ $labels.clusterName }}",
+        "resource_type": "prometheus"
+      },
+      "GrafanaDown": {
+        "expr": "avg without(pod, instance) (facets_grafana_status == 0)",
+        "message": "[{{ $labels.stackName }} -> {{ $labels.clusterName }}] Grafana is down for more than 5minutes",
+        "summary": "[{{ $labels.stackName }} -> {{ $labels.clusterName }}] Grafana is down for more than 5minutes",
+        "for": "5m",
+        "labels": {
+          "team": "stack_owner",
+          "severity": "critical",
+          "resourceName": "{{ $labels.clusterName }}",
+          "resourceType": "grafana"
+        },
+        "annotations": {
+          "k2": "v2"
+        },
+        "severity": "critical",
+        "resource_name": "{{ $labels.clusterName }}",
+        "resource_type": "grafana"
+      },
+      "ReleaseFailure": {
+        "expr": "increase(facets_release_status_total{status=\"FAILED\"}[1m]) > 0",
+        "message": "[{{ $labels.stackName }} -> {{ $labels.clusterName }}] Release Failed",
+        "summary": "[{{ $labels.stackName }} -> {{ $labels.clusterName }}] Release Failed",
+        "for": "0m",
+        "labels": {
+          "team": "stack_owner",
+          "severity": "critical",
+          "resourceName": "{{ $labels.clusterName }}",
+          "resourceType": "cluster"
+        },
+        "annotations": {
+          "k2": "v2"
+        },
+        "severity": "critical",
+        "resource_name": "{{ $labels.clusterName }}",
+        "resource_type": "cluster"
+      }
+    }
+  },
+  "out": {}
+}
